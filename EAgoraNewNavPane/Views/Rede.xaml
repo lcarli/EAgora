@@ -7,7 +7,55 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Rede" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Images/Madeira.jpg"/>
+        </Grid.Background>
+        <RelativePanel Margin="20">
+            <RelativePanel.Background>
+                <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Images/Quadro Negro.jpg"/>
+            </RelativePanel.Background>
+            <TextBlock Name="text1"
+                       Text="Você pode se conectar com as pessoas por dois jeitos, é só escolher:"
+                       Foreground="White"
+                       FontSize = "25"
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Center"
+                       RelativePanel.AlignLeftWith="StackButtons"
+                       RelativePanel.AlignRightWith="StackButtons"
+                       RelativePanel.AlignTopWithPanel="True" 
+                       RelativePanel.AlignHorizontalCenterWithPanel="True" 
+                       Margin="20,50,20,0"/>
+            <StackPanel Name="StackButtons"
+                       RelativePanel.AlignLeftWithPanel="True"
+                       RelativePanel.AlignRightWithPanel="True"
+                       RelativePanel.AlignHorizontalCenterWithPanel="True"
+                       RelativePanel.AlignVerticalCenterWithPanel="True"
+                       Margin="30,50,30,20"
+                        Orientation="Vertical">
+                <Button HorizontalAlignment="Center"
+                        Width="250"
+                        Height="70"
+                        Click="Proximidade">
+                    <Button.Background>
+                        <ImageBrush ImageSource="ms-appx:///Assets/Icons/proximidade.PNG"/>
+                    </Button.Background>
+                </Button>
+                <Button HorizontalAlignment="Center" 
+                        Width="250"
+                        Height="70"
+                        Click="AreaDeInteresse">
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Icons/area.PNG"/>
+                    </Button.Background>
+                </Button>
+                <TextBlock Name="text4"
+                       Text="*Faça seu MATCH vocacional antes de escolher esta opção"
+                       Foreground="White"
+                       FontSize = "13"
+                       TextWrapping="Wrap"
+                       Margin="80,0,10,30"/>
+            </StackPanel>
+        </RelativePanel>
     </Grid>
 </Page>

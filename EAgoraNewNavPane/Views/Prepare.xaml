@@ -7,7 +7,83 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Prepare-se" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Images/Madeira.jpg"/>
+        </Grid.Background>
+        <RelativePanel Margin="20">
+            <RelativePanel.Background>
+                <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Images/Quadro Negro.jpg"/>
+            </RelativePanel.Background>
+            <TextBlock Name="text1"
+                       Text="A gente te ajuda a ficar preparado para passar naquela prova!"
+                       Foreground="White"
+                       FontSize = "25"
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       RelativePanel.AlignTopWithPanel="True" 
+                       RelativePanel.AlignHorizontalCenterWithPanel="True" 
+                       Margin="15,50,15,0"/>
+            <StackPanel Orientation="Vertical"
+                        RelativePanel.Below="text1"
+                        RelativePanel.AlignBottomWithPanel="True"
+                        RelativePanel.AlignLeftWithPanel="True"
+                        RelativePanel.AlignRightWithPanel="True"
+                        VerticalAlignment="Center"
+                        Margin="20">
+                <StackPanel Name="StackOne" Orientation="Horizontal" HorizontalAlignment="Center" Tapped="StackOne_Tapped">
+                    <Image Width="70" Height="70" Stretch="UniformToFill" Source="ms-appx:///Assets/Icons/Sway-icon.png"></Image>
+                    <TextBlock Width="20"></TextBlock>
+                    <Border Background="gray" Width="160">
+                        <TextBlock FontSize="25"
+                                   Foreground="White"
+                                   TextWrapping="Wrap"
+                                   Text="Humanas"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+                <TextBlock/>
+                <StackPanel Name="StackTwo" Orientation="Horizontal" HorizontalAlignment="Center" Tapped="StackTwo_Tapped">
+                    <Image Width="70" Height="70" Stretch="UniformToFill" Source="ms-appx:///Assets/Icons/Sway-icon.png"></Image>
+                    <TextBlock Width="20"></TextBlock>
+                    <Border Background="Gray" Width="160">
+                        <TextBlock FontSize="25"
+                                   Foreground="White"
+                                   TextWrapping="Wrap"
+                                   Text="Exatas"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+                <TextBlock/>
+                <StackPanel Name="StackThree" Orientation="Horizontal" HorizontalAlignment="Center" Tapped="StackThree_Tapped">
+                    <Image Width="70" Height="70" Stretch="UniformToFill" Source="ms-appx:///Assets/Icons/Sway-icon.png"></Image>
+                    <TextBlock Width="20"></TextBlock>
+                    <Border Background="Gray" Width="160">
+                        <TextBlock FontSize="25"
+                                   Foreground="White"
+                                   TextWrapping="Wrap"
+                                   Text="Biológicas"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+                <TextBlock/>
+                <StackPanel Name="StackFour" Orientation="Horizontal" HorizontalAlignment="Center" Tapped="StackFour_Tapped">
+                    <Image Width="70" Height="80" Stretch="UniformToFill" Source="ms-appx:///Assets/Icons/play.png"></Image>
+                    <TextBlock Width="20"></TextBlock>
+                    <Border Background="Gray" Width="160">
+                        <TextBlock FontSize="25"
+                                   Foreground="White"
+                                   TextWrapping="Wrap"
+                                   Text="material de apoio para Vestibular"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </RelativePanel>
     </Grid>
 </Page>

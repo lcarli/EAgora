@@ -33,6 +33,8 @@ namespace EAgoraNewNavPane
         public static  ObservableCollection<IconDataItem> MenuList { get; set; } = new ObservableCollection<IconDataItem>();
         public static ObservableCollection<OptionMenuItem> OptionList { get; set; } = new ObservableCollection<OptionMenuItem>();
 
+        public static string perfilescolhido;
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -42,7 +44,7 @@ namespace EAgoraNewNavPane
             this.InitializeComponent();
             this.Suspending += OnSuspending;
             MenuList.Add(new IconDataItem { Title = "Perfil", IconImage = "ms-appx:///Assets/Images/Boneca.png", DestinationPage = typeof(Principal) });
-            MenuList.Add(new IconDataItem { Title = "Match", IconImage = "ms-appx:///Assets/Icons/Heart.png", DestinationPage = typeof(MatchResult) });
+            MenuList.Add(new IconDataItem { Title = "Match", IconImage = "ms-appx:///Assets/Icons/Heart.png", DestinationPage = typeof(Match) });
             MenuList.Add(new IconDataItem { Title = "Rede de Relacionamento", IconImage = "ms-appx:///Assets/Icons/People Talking.png", DestinationPage = typeof(Rede) });
             MenuList.Add(new IconDataItem { Title = "Prepare-se", IconImage = "ms-appx:///Assets/Icons/Chapeu.png", DestinationPage = typeof(Prepare) });
             MenuList.Add(new IconDataItem { Title = "Agenda", IconImage = "ms-appx:///Assets/Icons/Heart.png", DestinationPage = typeof(Agenda) });

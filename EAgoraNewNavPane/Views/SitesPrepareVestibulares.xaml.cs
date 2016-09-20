@@ -20,31 +20,11 @@ namespace EAgoraNewNavPane.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Prepare : Page
+    public sealed partial class SitesPrepareVestibulares : Page
     {
-        public Prepare()
+        public SitesPrepareVestibulares()
         {
             this.InitializeComponent();
-        }
-
-        private void StackFour_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(SitesPrepareVestibulares));
-        }
-
-        private void StackThree_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-
-        }
-
-        private void StackTwo_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-
-        }
-
-        private void StackOne_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-
         }
     }
 }

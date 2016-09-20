@@ -89,7 +89,10 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="Assets\Icons\area.PNG" />
     <Content Include="Assets\Icons\OneNote-icon.png" />
+    <Content Include="Assets\Icons\play.png" />
+    <Content Include="Assets\Icons\proximidade.PNG" />
     <Content Include="Assets\Icons\Sway-icon.png" />
     <Content Include="Assets\questions.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -111,6 +114,9 @@
     </Compile>
     <Compile Include="Views\Ajuda.xaml.cs">
       <DependentUpon>Ajuda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Mapa.xaml.cs">
+      <DependentUpon>Mapa.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Match.xaml.cs">
       <DependentUpon>Match.xaml</DependentUpon>
@@ -135,6 +141,9 @@
     </Compile>
     <Compile Include="Views\Rede.xaml.cs">
       <DependentUpon>Rede.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SitesPrepareVestibulares.xaml.cs">
+      <DependentUpon>SitesPrepareVestibulares.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +190,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Mapa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Match.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -210,6 +223,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Rede.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SitesPrepareVestibulares.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

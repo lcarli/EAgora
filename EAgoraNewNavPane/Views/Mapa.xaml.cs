@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -20,29 +21,24 @@ namespace EAgoraNewNavPane.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Rede : Page
+    public sealed partial class Mapa : Page
     {
-        public Rede()
+        string choice;
+        public Mapa()
         {
             this.InitializeComponent();
         }
 
-        private void Proximidade(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            this.Frame.Navigate(typeof(Mapa), "proximidade");
-        }
-
-        private async void AreaDeInteresse(object sender, RoutedEventArgs e)
-        {
-            if (App.perfilescolhido == "" || App.perfilescolhido == null)
+            choice = e.Parameter.ToString();
+            if (choice == "proximidade")
             {
-                ContentDialog cd = new ContentDialog();
-                cd.Content = "Você ainda não descobriu seu MATCH Vocacional. É preciso definir antes de filtrar pela área de interesse.";
-                await cd.ShowAsync();
+                ImagemTopo.Source = new BitmapImage(new Uri("ms-appx:///Assets/Icons/proximidade.PNG"));
             }
             else
             {
-                this.Frame.Navigate(typeof(Mapa), "area");
+                ImagemTopo.Source = new BitmapImage(new Uri("ms-appx:///Assets/Icons/area.PNG"));
             }
         }
     }
