@@ -1,0 +1,120 @@
+[  { "pergunta" : "Você é mais:",   
+    "Resposta 1" : "Realista", 
+    "Resposta 2" : "Cabeça nas Nuvens" },
+    
+    { "pergunta" : "Que tipo de histórias lhe atraem mais?",
+    "Resposta 1" : "As que você consegue ter empatia ",
+    "Resposta 2" : "As que te emocionam" },
+
+    { "pergunta" : "Quando tem que comprar um celular, você?", 
+    "Resposta 1" : "Analisa bem antes", 
+    "Resposta 2" : "Bate o olho e leva" },
+
+    { "pergunta" : "A balada ta rolando e você", 
+    "Resposta 1" : "Fica até o final", 
+    "Resposta 2" : "É um dos primeiros a dizer tchau " },
+
+    { "pergunta" : "Que tipo de pessoa mais lhe atrai", 
+    "Resposta 1" : "Certinhas ou sensatas ", 
+    "Resposta 2" : "Meio malucas ou criativas  " },
+
+    { "pergunta" : "Voce curte mais o que é: ",
+    "Resposta 1" : "Real ", 
+    "Resposta 2" : "Possivel" },
+
+    { "pergunta" : "Falando com outras pessoas você faz o tipo:", 
+    "Resposta 1" : "Educado, mas objetivo ", 
+    "Resposta 2" : "Divertido, com mais intimidade" },
+
+    { "pergunta" : "Voce não gosta quando as coisas ", 
+    "Resposta 1" : "Ficam inacabadas", 
+    "Resposta 2" : "Estao concluídas" },
+
+    { "pergunta" : "Na sua galera, você: ",
+    "Resposta 1" : "Sabe o que rola com todo mundo", 
+    "Resposta 2" : "É o ultimo a saber das coisas " },
+
+    { "pergunta" : "Os seus tênis, são:", 
+    "Resposta 1" : "Iguais aos de todo mundo", 
+    "Resposta 2" : "São pintados e tem cadarços diferentes" },
+
+    { "pergunta" : "Você acha que livros em geral são", 
+    "Resposta 1" : "Uma viagem sem pe nem cabeça", 
+    "Resposta 2" : "Um jeito legal de São pintados e tem cadarços diferentes" },
+
+    { "pergunta" : "Numa discussão entre várias pessoas, você:", 
+    "Resposta 1" : "Se apega ao que tem mais a ver com você", 
+    "Resposta 2" : "Defende o ponto de vista de quem gosta " },
+
+    { "pergunta" : "Na hora de dizer se algo é certo ou não, você", 
+    "Resposta 1" : "Usa a logica", 
+    "Resposta 2" : "Apela para os seus valores " },
+
+    { "pergunta" : "Voce acha que ", 
+    "Resposta 1" : "Decisoes fortes são sempre bem vindas", 
+    "Resposta 2" : "Algumas coisas não precisam ser definidas" },
+
+    { "pergunta" : "Voce na maioria das vezes, é:", 
+    "Resposta 1" : "Firme e pouco flexível", 
+    "Resposta 2" : "Fácil de ser convencido" },
+
+    { "pergunta" : "Quando você fala com um estranho ao telefone:", 
+    "Resposta 1" : "Fica tranquilo e sabe o que dizer", 
+    "Resposta 2" : "Começa a suar a mao e gaguejar" },
+
+    { "pergunta" : "Se você vê um conhecido seu abrindo sua mochila,:", 
+    "Resposta 1" : "Entende o que esta sendo roubado ", 
+    "Resposta 2" : "Pergunta se a pessoa precisa de algo " },
+
+    { "pergunta" : "Quando você ouve alguém cheio de novas ideias, pensa: ", 
+    "Resposta 1" : "Ai meu deus que saco esse louco ", 
+    "Resposta 2" : "Que legal, nunca pensei nisso " },
+
+    { "pergunta" : "Voce normalmente faz o tipo: ", 
+    "Resposta 1" : "Frio e calculista ", 
+    "Resposta 2" : "Extrovertido e acolhedor " },
+
+    { "pergunta" : "Qual desses dois defeitos você não suporta?", 
+    "Resposta 1" : "Injustiça",
+    "Resposta 2" : "Falta de piedade " },
+
+    { "pergunta" : "Quando as coisas acontecem por acaso, você: ", 
+    "Resposta 1" : "Fica a beira de um ataque de nervos ", 
+    "Resposta 2" : "Relaxa e vai seguindo a onda " },
+
+    { "pergunta" : "Pra você, é mais legal ", 
+    "Resposta 1" : "Comprar algo e se sentir bem depois ", 
+    "Resposta 2" : "Saber o que você pode comprar " },
+
+    { "pergunta" : "No elevador, com estranhos, você", 
+    "Resposta 1" : "Não consegue ficar calado e puxa conversa ", 
+    "Resposta 2" : "Fica quieto no canto, olhando pra cima " },
+
+    { "pergunta" : "Quando você ve uma criança brincando, pensa: ", 
+    "Resposta 1" : "Que perda de tempo, devia ta estudando ", 
+    "Resposta 2" : "Queria eu viajar assim hoje em dia " },
+
+    { "pergunta" : "Na hora de viajar com os amigos, você:", 
+    "Resposta 1" : "Pesquisa tudo sobre vários roteiros ", 
+    "Resposta 2" : "Escolhe um lugar pela intuição " },
+
+    { "pergunta" : "Você consegue o que quer, sendo mais: ", 
+    "Resposta 1" : "Firme do que gentil ", 
+    "Resposta 2" : "Gentil do que firme" },
+
+    { "pergunta" : "Quem você admira mais?", 
+    "Resposta 1" : "Aquele seu amigo organizadinho ", 
+    "Resposta 2" : "Aquele seu amigo relaxadao " },
+
+    { "pergunta" : "Nos amigos secretos você prefere: ", 
+    "Resposta 1" : "Que haja uma lista de presente ", 
+    "Resposta 2" : "Surpreender quem você tirou" },
+
+    { "pergunta" : "Falar com quem você conhece:", 
+    "Resposta 1" : "É super legal ", 
+    "Resposta 2" : "Da uma preguiça " },
+
+    { "pergunta" : "Seu apelido ta mais para: ", 
+    "Resposta 1" : "General ", 
+    "Resposta 2" : "Chapadão" }
+]

@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{de7fad30-0426-40a0-90c3-f8a1fe2e3283}</ProjectGuid>
+    <ProjectGuid>{DE7FAD30-0426-40A0-90C3-F8A1FE2E3283}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EAgoraNewNavPane</RootNamespace>
@@ -16,9 +16,7 @@
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    
     <PackageCertificateKeyFile>EAgoraNewNavPane_TemporaryKey.pfx</PackageCertificateKeyFile>
-    
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -91,6 +89,11 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="Assets\Icons\OneNote-icon.png" />
+    <Content Include="Assets\Icons\Sway-icon.png" />
+    <Content Include="Assets\questions.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -100,17 +103,58 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\IconDataItem.cs" />
+    <Compile Include="Model\OptionMenuItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Agenda.xaml.cs">
+      <DependentUpon>Agenda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Ajuda.xaml.cs">
+      <DependentUpon>Ajuda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Match.xaml.cs">
+      <DependentUpon>Match.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MatchPage1.xaml.cs">
+      <DependentUpon>MatchPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MatchQuestions.xaml.cs">
+      <DependentUpon>MatchQuestions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MatchResult.xaml.cs">
+      <DependentUpon>MatchResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MatchResultsMateriais.xaml.cs">
+      <DependentUpon>MatchResultsMateriais.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Prepare.xaml.cs">
+      <DependentUpon>Prepare.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Principal.xaml.cs">
+      <DependentUpon>Principal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Rede.xaml.cs">
+      <DependentUpon>Rede.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    
     <None Include="EAgoraNewNavPane_TemporaryKey.pfx" />
-    
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Icons\Book &amp; Pencil.png" />
+    <Content Include="Assets\Icons\Broken Heart.png" />
+    <Content Include="Assets\Icons\Chapeu.PNG" />
+    <Content Include="Assets\Icons\circle.png" />
+    <Content Include="Assets\Icons\Heart.png" />
+    <Content Include="Assets\Icons\LegalIcon.png" />
+    <Content Include="Assets\Icons\Linha APP.png" />
+    <Content Include="Assets\Icons\People Talking.png" />
+    <Content Include="Assets\Images\Boneca.png" />
+    <Content Include="Assets\Images\Madeira.jpg" />
+    <Content Include="Assets\Images\Quadro Negro.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -129,12 +173,51 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Agenda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Ajuda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Match.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MatchPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MatchQuestions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MatchResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MatchResultsMateriais.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Prepare.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Principal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Rede.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
-  
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
-
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

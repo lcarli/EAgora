@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="EAgoraNewNavPane.Views.Principal"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EAgoraNewNavPane.Model"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="ButtonTemplate" x:DataType="local:IconDataItem">
+            <Grid Width="240" Height="48">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="{x:Bind IconImage}" 
+                       Stretch="Fill" 
+                       Margin="12,12,11,12"/>
+                <TextBlock Grid.Column="1" 
+                           Text="{x:Bind Title}" 
+                           Foreground="White" 
+                           FontSize="16" 
+                           VerticalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="OptionTemplate">
+            <Grid Width="240" Height="48">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <FontIcon Grid.Column="0" 
+                          Margin="12,12,11,12" 
+                          FontFamily="Segoe MDL2 Assets" 
+                          Glyph="{Binding Glyph}" Foreground="White" />
+                <TextBlock Grid.Column="1" 
+                           Text="{Binding Name}" 
+                           Foreground="White" 
+                           FontSize="16" VerticalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" BorderThickness="1" BorderBrush="Black">
+        <controls:HamburgerMenu PaneBackground="Black" x:Name="HamburgerMenu"
+                                Foreground="White"
+                                ItemTemplate="{StaticResource ButtonTemplate}"
+                                OptionsItemTemplate="{StaticResource OptionTemplate}"
+                                ItemClick="HamburgerMenu_OnItemClick"
+                                OptionsItemClick="HamburgerMenu_OnOptionsItemClick"
+                                OpenPaneLength="267"
+                                DisplayMode="CompactOverlay"
+                                CompactPaneLength="48"
+                                HamburgerHeight="48"
+                                IsPaneOpen="False">
+            <Frame x:Name="contentFrame"/>
+        </controls:HamburgerMenu>
+    </Grid>
+</Page>
