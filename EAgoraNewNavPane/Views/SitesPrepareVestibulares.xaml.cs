@@ -26,5 +26,20 @@ namespace EAgoraNewNavPane.Views
         {
             this.InitializeComponent();
         }
+
+        private void StackOne_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
+
+        private void StackTwo_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
+
+        private void StackThree_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
     }
 }

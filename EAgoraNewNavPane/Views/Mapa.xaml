@@ -35,7 +35,7 @@
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        Margin="20"/>
-            <maps:MapControl x:Name="Mapa"
+            <maps:MapControl x:Name="MapaView"
                              RelativePanel.AlignLeftWith="ImagemTopo"
                              RelativePanel.AlignRightWith="ImagemTopo"
                              RelativePanel.Below="resultText"
