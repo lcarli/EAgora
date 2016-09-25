@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using EAgoraNewNavPane.Views;
+using Windows.Foundation.Metadata;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -26,20 +27,37 @@ namespace EAgoraNewNavPane
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private MobileServiceUser user;
+        public static MobileServiceUser user;
 
         public MainPage()
         {
             this.InitializeComponent();
+            initUi();
+        }
+
+        private async void initUi()
+        {
+            if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+            {
+                var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
+                await statusBar.HideAsync();
+            }
         }
 
         private async void btogin_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Principal));
+            this.Frame.Navigate(typeof(Ativacao));
             //bool logged = await AuthenticateAsync();
             //if (logged)
             //{
-            //    //this.Frame.Navigate(typeof(Pages.Principal));
+            //    if (App.GetData("ativação").ToString() == "OK")
+            //    {
+            //        this.Frame.Navigate(typeof(Principal));
+            //    }
+            //    else
+            //    {
+            //        this.Frame.Navigate(typeof(Ativacao));
+            //    }
             //}
             //else
             //{
@@ -56,6 +74,7 @@ namespace EAgoraNewNavPane
             {
                 user = await App.MobileService
                     .LoginAsync(MobileServiceAuthenticationProvider.WindowsAzureActiveDirectory);
+                App.SaveData("User", user);
                 return true;
             }
             catch (InvalidOperationException)

@@ -27,19 +27,22 @@ namespace EAgoraNewNavPane.Views
             this.InitializeComponent();
         }
 
-        private void StackOne_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void StackOne_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            //var uriString = "";
+            //await Windows.System.Launcher.LaunchUriAsync(new Uri(uriString));
         }
 
-        private void StackTwo_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void StackTwo_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            //var uriString = "";
+            //await Windows.System.Launcher.LaunchUriAsync(new Uri(uriString));
         }
 
-        private void StackThree_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void StackThree_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            //var uriString = "";
+            //await Windows.System.Launcher.LaunchUriAsync(new Uri(uriString));
         }
     }
 }

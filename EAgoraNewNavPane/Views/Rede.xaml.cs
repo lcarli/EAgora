@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -34,10 +35,9 @@ namespace EAgoraNewNavPane.Views
 
         private async void AreaDeInteresse(object sender, RoutedEventArgs e)
         {
-            if (App.perfilescolhido == "" || App.perfilescolhido == null)
+            if (App.GetData("Perfil").ToString() == "" || App.GetData("Perfil").ToString() == null)
             {
-                ContentDialog cd = new ContentDialog();
-                cd.Content = "Você ainda não descobriu seu MATCH Vocacional. É preciso definir antes de filtrar pela área de interesse.";
+                MessageDialog cd = new MessageDialog("Você ainda não descobriu seu MATCH Vocacional. É preciso definir antes de filtrar pela área de interesse.");
                 await cd.ShowAsync();
             }
             else

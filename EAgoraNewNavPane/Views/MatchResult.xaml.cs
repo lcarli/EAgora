@@ -36,7 +36,7 @@ namespace EAgoraNewNavPane.Views
         {
             perfil = e.Parameter.ToString();
             text2.Text = perfil;
-            App.perfilescolhido = perfil;
+            App.SaveData("Perfil", perfil);
             if (perfil == "Humanas")
             {
                 text3.Text = HumanasResult;

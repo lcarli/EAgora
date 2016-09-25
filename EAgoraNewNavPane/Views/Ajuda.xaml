@@ -7,7 +7,54 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Images/Madeira.jpg"/>
+        </Grid.Background>
+        <RelativePanel Margin="20">
+            <RelativePanel.Background>
+                <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Images/Quadro Negro.jpg"/>
+            </RelativePanel.Background>
+            <TextBlock Name="txt1"
+                       RelativePanel.AlignTopWithPanel="True"
+                       RelativePanel.AlignLeftWithPanel="True"
+                       RelativePanel.AlignRightWithPanel="True"
+                       Text="Quer saber mais sobre o aplicativo? Basta entrar em contato com nossa equipe:"
+                       Foreground="White"
+                       FontSize="25"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       Margin="15"/>
+            <TextBlock Name="txt2"
+                       RelativePanel.Below="txt1"
+                       RelativePanel.AlignHorizontalCenterWithPanel="True"
+                       Text= "Amanda Medeiros              t-ammede@microsoft.com"
+                       Foreground="White"
+                       FontSize="15"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       Margin="15"
+                       Width="180"/>
+            <TextBlock Name="txt3"
+                       RelativePanel.Below="txt2"
+                       RelativePanel.AlignHorizontalCenterWithPanel="True"
+                       Text= "Sthefanye Pitondo             t-stpint@microsoft.com"
+                       Foreground="White"
+                       FontSize="15"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       Margin="15"
+                       Width="180"/>
+            <TextBlock Name="txt4"
+                       RelativePanel.Below="txt3"
+                       RelativePanel.AlignHorizontalCenterWithPanel="True"
+                       Text= "Gabriela Torres                   t-frtorr@microsoft.com"
+                       Foreground="White"
+                       FontSize="15"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       Margin="15"
+                       Width="180"/>
+        </RelativePanel>
     </Grid>
 </Page>

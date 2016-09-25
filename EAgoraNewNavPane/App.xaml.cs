@@ -11,6 +11,10 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Foundation.Metadata;
+using Windows.Storage;
+using Windows.UI.Core;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -33,8 +37,6 @@ namespace EAgoraNewNavPane
         public static  ObservableCollection<IconDataItem> MenuList { get; set; } = new ObservableCollection<IconDataItem>();
         public static ObservableCollection<OptionMenuItem> OptionList { get; set; } = new ObservableCollection<OptionMenuItem>();
 
-        public static string perfilescolhido;
-
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -43,7 +45,7 @@ namespace EAgoraNewNavPane
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            MenuList.Add(new IconDataItem { Title = "Perfil", IconImage = "ms-appx:///Assets/Images/Boneca.png", DestinationPage = typeof(Principal) });
+            MenuList.Add(new IconDataItem { Title = "Perfil", IconImage = "ms-appx:///Assets/Images/Boneca.png", DestinationPage = typeof(Perfil) });
             MenuList.Add(new IconDataItem { Title = "Match", IconImage = "ms-appx:///Assets/Icons/Heart.png", DestinationPage = typeof(Match) });
             MenuList.Add(new IconDataItem { Title = "Rede de Relacionamento", IconImage = "ms-appx:///Assets/Icons/People Talking.png", DestinationPage = typeof(Rede) });
             MenuList.Add(new IconDataItem { Title = "Prepare-se", IconImage = "ms-appx:///Assets/Icons/Chapeu.png", DestinationPage = typeof(Prepare) });
@@ -75,6 +77,7 @@ namespace EAgoraNewNavPane
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
+                //rootFrame.Navigated += OnNavigated;
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
@@ -83,6 +86,15 @@ namespace EAgoraNewNavPane
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
+
+                // Register a handler for BackRequested events and set the
+                // visibility of the Back button
+                //SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
+
+                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                    rootFrame.CanGoBack ?
+                    AppViewBackButtonVisibility.Visible :
+                    AppViewBackButtonVisibility.Collapsed;
             }
 
             if (e.PrelaunchActivated == false)
@@ -109,6 +121,15 @@ namespace EAgoraNewNavPane
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
 
+        private void OnNavigated(object sender, NavigationEventArgs e)
+        {
+            // Each time a navigation event occurs, update the Back button's visibility
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                ((Frame)sender).CanGoBack ?
+                AppViewBackButtonVisibility.Visible :
+                AppViewBackButtonVisibility.Collapsed;
+        }
+
         /// <summary>
         /// Invoked when application execution is being suspended.  Application state is saved
         /// without knowing whether the application will be terminated or resumed with the contents
@@ -121,6 +142,57 @@ namespace EAgoraNewNavPane
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        //private void OnBackRequested(object sender, BackRequestedEventArgs e)
+        //{
+        //    Frame rootFrame = Window.Current.Content as Frame;
+
+        //    if (rootFrame.CanGoBack)
+        //    {
+        //        e.Handled = true;
+        //        rootFrame.GoBack();
+        //    }
+        //}
+
+        public static void SaveData(string nome, Object value)
+        {
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+            localSettings.Values[nome] = value;
+        }
+
+        public static Object GetData(string nome)
+        {
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+            return localSettings.Values[nome];
+        }
+
+        public static async void DefaultLaunch(string nome)
+        {
+            nome = "Lista de Livros - USP .docx";
+            // Path to the file in the app package to launch
+            string fileToOpen = @"Assets\" + nome;
+
+            var file = await Package.Current.InstalledLocation.GetFileAsync(fileToOpen);
+
+            if (file != null)
+            {
+                // Launch the retrieved file
+                var success = await Windows.System.Launcher.LaunchFileAsync(file);
+
+                if (!success)
+                {
+                    MessageDialog md = new MessageDialog("Falha ao carregar o arquivo.");
+                    await md.ShowAsync();
+                }
+            }
+            else
+            {
+                MessageDialog md = new MessageDialog("Falha ao encontrar o arquivo.");
+                await md.ShowAsync();
+            }
         }
     }
 }

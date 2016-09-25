@@ -16,6 +16,8 @@ using Windows.UI.Xaml.Navigation;
 using EAgoraNewNavPane.Model;
 using EAgoraNewNavPane.Views;
 using System.Collections.ObjectModel;
+using Windows.Foundation.Metadata;
+using Windows.UI.Core;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,6 +32,28 @@ namespace EAgoraNewNavPane.Views
         {
             this.InitializeComponent();
             this.DataContext = this;
+            initUi();
+            contentFrame.Navigate(typeof(Perfil));
+
+            SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
+        }
+
+        private void OnBackRequested(object sender, BackRequestedEventArgs e)
+        {
+            if (contentFrame.CanGoBack)
+            {
+                e.Handled = true;
+                contentFrame.GoBack();
+            }
+        }
+
+        private async void initUi() 
+        {
+            if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+            {
+                var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
+                await statusBar.HideAsync();
+            }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

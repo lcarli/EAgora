@@ -39,7 +39,7 @@
                         <TextBlock FontSize="25"
                                    Foreground="White"
                                    TextWrapping="Wrap"
-                                   Text="Humanas"
+                                   Text="HUMANAS"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"/>
                     </Border>
@@ -52,7 +52,7 @@
                         <TextBlock FontSize="25"
                                    Foreground="White"
                                    TextWrapping="Wrap"
-                                   Text="Exatas"
+                                   Text="EXATAS"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"/>
                     </Border>
@@ -65,7 +65,7 @@
                         <TextBlock FontSize="25"
                                    Foreground="White"
                                    TextWrapping="Wrap"
-                                   Text="Biológicas"
+                                   Text="BIOLÓGICAS"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"/>
                     </Border>
@@ -78,7 +78,7 @@
                         <TextBlock FontSize="25"
                                    Foreground="White"
                                    TextWrapping="Wrap"
-                                   Text="material de apoio para Vestibular"
+                                   Text="Material de apoio para Vestibular"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"/>
                     </Border>

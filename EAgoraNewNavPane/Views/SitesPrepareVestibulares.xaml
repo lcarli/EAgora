@@ -33,15 +33,15 @@
                         VerticalAlignment="Center"
                         Margin="20">
                 <StackPanel Name="StackOne" HorizontalAlignment="Center" Tapped="StackOne_Tapped">
-                    <Image Width="110" Height="110" Stretch="UniformToFill" Source="ms-appx:///Assets/Icons/Sway-icon.png"></Image>
+                    <Image Width="180" Height="110" Stretch="Uniform" Source="ms-appx:///Assets/Icons/Sway-icon.png"></Image>
                 </StackPanel>
                 <TextBlock/>
                 <StackPanel Name="StackTwo" HorizontalAlignment="Center" Tapped="StackTwo_Tapped">
-                    <Image Width="110" Height="110" Stretch="UniformToFill" Source="ms-appx:///Assets/Icons/Sway-icon.png"></Image>
+                    <Image Width="180" Height="110" Stretch="Uniform" Source="ms-appx:///Assets/Icons/Sway-icon.png"></Image>
                 </StackPanel>
                 <TextBlock/>
                 <StackPanel Name="StackThree" HorizontalAlignment="Center" Tapped="StackThree_Tapped">
-                    <Image Width="110" Height="110" Stretch="UniformToFill" Source="ms-appx:///Assets/Icons/Sway-icon.png"></Image>
+                    <Image Width="180" Height="110" Stretch="Uniform" Source="ms-appx:///Assets/Icons/Sway-icon.png"></Image>
                 </StackPanel>
             </StackPanel>
         </RelativePanel>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -49,8 +50,7 @@ namespace EAgoraNewNavPane.Views
                     openOfficeFileFromURI("onenote:https://d.docs.live.net/f1eb13e17b9ef550/Documents/Perfil%20de%Biológicas/");
                     break;
                 default:
-                    ContentDialog cd = new ContentDialog();
-                    cd.Content = "Um erro foi encontrado. Tente novamente.";
+                    MessageDialog cd = new MessageDialog("Um erro foi encontrado. Tente novamente.");
                     await cd.ShowAsync();
                     break;
             }
@@ -71,8 +71,7 @@ namespace EAgoraNewNavPane.Views
                     openOfficeFileFromURI("sway:https://sway.com/hKyYytO7vGYjpGgp");
                     break;
                 default:
-                    ContentDialog cd = new ContentDialog();
-                    cd.Content = "Um erro foi encontrado. Tente novamente.";
+                    MessageDialog cd = new MessageDialog("Um erro foi encontrado. Tente novamente.");
                     await cd.ShowAsync();
                     break;
             }
