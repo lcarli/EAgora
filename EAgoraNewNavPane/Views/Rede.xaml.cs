@@ -30,19 +30,27 @@ namespace EAgoraNewNavPane.Views
 
         private void Proximidade(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Mapa), "proximidade");
+            this.Frame.Navigate(typeof(Proximidade));
         }
 
         private async void AreaDeInteresse(object sender, RoutedEventArgs e)
         {
-            if (App.GetData("Perfil").ToString() == "" || App.GetData("Perfil").ToString() == null)
+            try
+            {
+                if (App.GetData("Perfil").ToString() == "" || App.GetData("Perfil").ToString() == null)
+                {
+                    MessageDialog cd = new MessageDialog("Você ainda não descobriu seu MATCH Vocacional. É preciso definir antes de filtrar pela área de interesse.");
+                    await cd.ShowAsync();
+                }
+                else
+                {
+                    this.Frame.Navigate(typeof(AreaDeInteresse));
+                }
+            }
+            catch (Exception)
             {
                 MessageDialog cd = new MessageDialog("Você ainda não descobriu seu MATCH Vocacional. É preciso definir antes de filtrar pela área de interesse.");
                 await cd.ShowAsync();
-            }
-            else
-            {
-                this.Frame.Navigate(typeof(Mapa), "area");
             }
         }
     }

@@ -52,7 +52,7 @@
                 <StackPanel Name="StackOne" Orientation="Horizontal" HorizontalAlignment="Center" Tapped="StackOne_Tapped">
                     <Image Name="SwayImage" Width="70" Height="70" Stretch="UniformToFill" Source="ms-appx:///Assets/Icons/Sway-icon.png"></Image>
                     <TextBlock Width="20"></TextBlock>
-                    <Border Background="Purple" Width="160">
+                    <Border Background="#148677" Width="160">
                         <TextBlock Name="txtarea" FontSize="25"
                                    Foreground="White"
                                    TextWrapping="Wrap"
@@ -65,7 +65,7 @@
                 <StackPanel Name="StackTwo" Orientation="Horizontal" HorizontalAlignment="Center" Tapped="StackTwo_Tapped">
                     <Image Name="OneNoteImage" Source="ms-appx:///Assets/Icons/OneNote-icon.png" Stretch="UniformToFill" Width="70"></Image>
                     <TextBlock Width="20"></TextBlock>
-                    <Border Background="Purple" Width="160">
+                    <Border Background="#85007d" Width="160">
                         <TextBlock Text="Cursos da Área"
                                    FontSize="25"
                                    Foreground="White"

@@ -16,14 +16,11 @@
                 <ImageBrush Stretch="Fill" ImageSource="Assets/Images/Quadro Negro.jpg"/>
             </RelativePanel.Background>
             <Image Name="circle"
-                   RelativePanel.Above="btogin" Source="Assets/Icons/circle.png"
-                   RelativePanel.AlignHorizontalCenterWithPanel="True"
-                   RelativePanel.AlignVerticalCenterWithPanel="True"
-                   Margin="50"/>
-            <Image Name="Chapeu"  RelativePanel.Above="btogin" Source="Assets/Icons/Chapeu.PNG"
-                   RelativePanel.AlignHorizontalCenterWithPanel="True"
-                   RelativePanel.AlignVerticalCenterWithPanel="True"
-                   Margin="100"/>
+                   Source="Assets/Images/Fig 9 - Logo+Nome_White.png"
+                   RelativePanel.AlignTopWithPanel="True"
+                   RelativePanel.AlignLeftWithPanel="True"
+                   RelativePanel.AlignRightWithPanel="True"
+                   Margin="0,70"/>
             <Button Name="btogin" RelativePanel.AlignHorizontalCenterWithPanel="True"
                     Width="250" FontSize="20"
                     RelativePanel.Above="Senha" Content="LOGIN" Foreground="White" Click="btogin_Click">
@@ -33,13 +30,13 @@
             </Button>
             <HyperlinkButton Name="Matricula" Content="Descubra o seu email institucional? Acesse aqui" 
                              Foreground="White" FontSize="12" RelativePanel.Above="Termos" Margin="20"
-                             RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+                             RelativePanel.AlignHorizontalCenterWithPanel="True" Click="Matricula_Click"/>
             <HyperlinkButton Name="Senha" Content="Esqueceu sua senha?" 
                              Foreground="White" FontSize="12" RelativePanel.Above="Matricula"
-                             RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="20" NavigateUri="http://office.com/getoffice365"/>
-            <HyperlinkButton Name="Termos" NavigateUri="http://www.bing.com" Margin="20,0, 20,10"
+                             RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="20" NavigateUri="http://office.com/getoffice365" Click="Senha_Click"/>
+            <HyperlinkButton Name="Termos" NavigateUri="http://www.bing.com" Margin="20,0, 20,100"
                              Padding="0" RelativePanel.AlignBottomWithPanel="True"
-                             RelativePanel.AlignHorizontalCenterWithPanel="True">
+                             RelativePanel.AlignHorizontalCenterWithPanel="True" Click="Termos_Click">
                 <HyperlinkButton.Template>
                     <ControlTemplate TargetType="HyperlinkButton">
                         <Border BorderThickness="0" Padding="0" Margin="0">
@@ -54,6 +51,7 @@
                     </ControlTemplate>
                 </HyperlinkButton.Template>
             </HyperlinkButton>
+            <CheckBox x:Name="checkBox" Content="Test" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="120" Checked="checkBox_Checked"/>
         </RelativePanel>
     </Grid>
 </Page>

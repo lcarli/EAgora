@@ -91,6 +91,7 @@
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <Content Include="Assets\Icons\area.PNG" />
     <Content Include="Assets\Icons\Excel-icon.png" />
+    <Content Include="Assets\Icons\onedrive.png" />
     <Content Include="Assets\Icons\OneNote-icon.png" />
     <Content Include="Assets\Icons\Outlook-icon.png" />
     <Content Include="Assets\Icons\play.png" />
@@ -99,10 +100,44 @@
     <Content Include="Assets\Icons\Skype-icon.png" />
     <Content Include="Assets\Icons\Sway-icon.png" />
     <Content Include="Assets\Icons\Word-icon.png" />
+    <Content Include="Assets\Images\Avatar.png" />
+    <Content Include="Assets\Images\Detone.png" />
+    <Content Include="Assets\Images\EJA.jpg" />
+    <Content Include="Assets\Images\evesp.jpg" />
+    <Content Include="Assets\Images\Fig 1 - Proximidade.png" />
+    <Content Include="Assets\Images\Fig 10 - Logo+Nome_Black.png" />
+    <Content Include="Assets\Images\Fig 11 - Ícone Agenda.png" />
+    <Content Include="Assets\Images\Fig 12 - Agenda_Barra.png" />
+    <Content Include="Assets\Images\Fig 12 - Seta_White.png" />
+    <Content Include="Assets\Images\Fig 13 - Agenda_junto.png" />
+    <Content Include="Assets\Images\Fig 14 - Agenda_Escrito.png" />
+    <Content Include="Assets\Images\Fig 15 - Overview Perfil.png" />
+    <Content Include="Assets\Images\Fig 16 - Avatar Perfil.emf" />
+    <Content Include="Assets\Images\Fig 17 - Lápis_Ediçao Perfil.png" />
+    <Content Include="Assets\Images\Fig 18 - Campos Perfil.png" />
+    <Content Include="Assets\Images\Fig 19 - Campo Perfil_em Branco.png" />
+    <Content Include="Assets\Images\Fig 2 - Área de Interesse.png" />
+    <Content Include="Assets\Images\Fig 3 - Seta.png" />
+    <Content Include="Assets\Images\Fig 4 - Ícone do App_Black.png" />
+    <Content Include="Assets\Images\Fig 4 - ïcone do App_White.png" />
+    <Content Include="Assets\Images\Fig 5 - Logo_White.png" />
+    <Content Include="Assets\Images\Fig 6 - Logo_Black.png" />
+    <Content Include="Assets\Images\Fig 7 - Bola_White.png" />
+    <Content Include="Assets\Images\Fig 8 - Bola_Black.png" />
+    <Content Include="Assets\Images\Fig 9 - Logo+Nome_White.png" />
+    <Content Include="Assets\Images\ita.png" />
+    <Content Include="Assets\Images\mackenzie.jpg" />
+    <Content Include="Assets\Images\puc-sp.jpg" />
+    <Content Include="Assets\Images\unesp.jpg" />
+    <Content Include="Assets\Images\Unicamp.jpg" />
+    <Content Include="Assets\Images\usp.jpg" />
     <Content Include="Assets\questions.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Lista de Livros - USP .docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Prova FUVEST 2016.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="project.json" />
@@ -120,14 +155,17 @@
     <Compile Include="Views\Agenda.xaml.cs">
       <DependentUpon>Agenda.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AgendaDetail.xaml.cs">
+      <DependentUpon>AgendaDetail.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Ajuda.xaml.cs">
       <DependentUpon>Ajuda.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AreaDeInteresse.xaml.cs">
+      <DependentUpon>AreaDeInteresse.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Ativacao.xaml.cs">
       <DependentUpon>Ativacao.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Mapa.xaml.cs">
-      <DependentUpon>Mapa.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Match.xaml.cs">
       <DependentUpon>Match.xaml</DependentUpon>
@@ -144,6 +182,9 @@
     <Compile Include="Views\MatchResultsMateriais.xaml.cs">
       <DependentUpon>MatchResultsMateriais.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MaterialUniversidade.xaml.cs">
+      <DependentUpon>MaterialUniversidade.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Perfil.xaml.cs">
       <DependentUpon>Perfil.xaml</DependentUpon>
     </Compile>
@@ -153,11 +194,17 @@
     <Compile Include="Views\Principal.xaml.cs">
       <DependentUpon>Principal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Proximidade.xaml.cs">
+      <DependentUpon>Proximidade.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Rede.xaml.cs">
       <DependentUpon>Rede.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SitesPrepareVestibulares.xaml.cs">
       <DependentUpon>SitesPrepareVestibulares.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Universidades.xaml.cs">
+      <DependentUpon>Universidades.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -200,15 +247,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AgendaDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Ajuda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Ativacao.xaml">
+    <Page Include="Views\AreaDeInteresse.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Mapa.xaml">
+    <Page Include="Views\Ativacao.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -232,6 +283,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\MaterialUniversidade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Perfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -244,11 +299,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Proximidade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Rede.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SitesPrepareVestibulares.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Universidades.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

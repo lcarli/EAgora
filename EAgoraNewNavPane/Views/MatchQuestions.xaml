@@ -56,7 +56,7 @@
                 <Image Name="iconQ2"
                        Width="50"
                        Height="50"
-                       Source="ms-appx:///Assets/Icons/Broken Heart.png"/>
+                       Source="ms-appx:///Assets/Icons/Heart.png"/>
                 <TextBlock/>
                 <TextBlock Name="answer2"
                            FontSize = "15"

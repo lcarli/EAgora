@@ -87,6 +87,8 @@ namespace EAgoraNewNavPane.Views
             }
             else
             {
+                iconQ1.Source = new BitmapImage(new Uri("ms-appx:///Assets/Icons/Heart.png"));
+                iconQ2.Source = new BitmapImage(new Uri("ms-appx:///Assets/Icons/Heart.png"));
                 question.Text = ListOfQuestion[qCounter].pergunta;
                 answer1.Text = ListOfQuestion[qCounter].resposta1;
                 answer2.Text = ListOfQuestion[qCounter].resposta2;

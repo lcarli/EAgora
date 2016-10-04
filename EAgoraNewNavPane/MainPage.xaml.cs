@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using EAgoraNewNavPane.Views;
 using Windows.Foundation.Metadata;
+using Windows.System;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -28,6 +29,7 @@ namespace EAgoraNewNavPane
     public sealed partial class MainPage : Page
     {
         public static MobileServiceUser user;
+        private bool teste = false;
 
         public MainPage()
         {
@@ -46,26 +48,41 @@ namespace EAgoraNewNavPane
 
         private async void btogin_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Ativacao));
-            //bool logged = await AuthenticateAsync();
-            //if (logged)
-            //{
-            //    if (App.GetData("ativação").ToString() == "OK")
-            //    {
-            //        this.Frame.Navigate(typeof(Principal));
-            //    }
-            //    else
-            //    {
-            //        this.Frame.Navigate(typeof(Ativacao));
-            //    }
-            //}
-            //else
-            //{
-            //    string message = "Você precisa estar logado para acessar o aplicativo.";
-            //    var dialog = new MessageDialog(message);
-            //    dialog.Commands.Add(new UICommand("OK"));
-            //    await dialog.ShowAsync();
-            //}
+            if (teste)
+            {
+                this.Frame.Navigate(typeof(Ativacao));
+
+            }
+            else
+            {
+                try
+                {
+                    bool logged = await AuthenticateAsync();
+                    if (logged)
+                    {
+                        if (App.GetData("ativação").ToString() == "OK")
+                        {
+                            this.Frame.Navigate(typeof(Principal));
+                        }
+                        else
+                        {
+                            this.Frame.Navigate(typeof(Ativacao));
+                        }
+                    }
+                    else
+                    {
+                        string message = "Você precisa estar logado para acessar o aplicativo.";
+                        var dialog = new MessageDialog(message);
+                        dialog.Commands.Add(new UICommand("OK"));
+                        await dialog.ShowAsync();
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageDialog md = new MessageDialog("Ocorreu um erro. Por favor, tente novamente.");
+                    await md.ShowAsync();
+                }
+            }
         }
 
         private async Task<bool> AuthenticateAsync()
@@ -74,7 +91,7 @@ namespace EAgoraNewNavPane
             {
                 user = await App.MobileService
                     .LoginAsync(MobileServiceAuthenticationProvider.WindowsAzureActiveDirectory);
-                App.SaveData("User", user);
+                App.SaveData("User", user.UserId);
                 return true;
             }
             catch (InvalidOperationException)
@@ -83,5 +100,27 @@ namespace EAgoraNewNavPane
             }
         }
 
+        private async void Matricula_Click(object sender, RoutedEventArgs e)
+        {
+            //https://sed.educacao.sp.gov.br/obtenha-seu-acesso
+            await Launcher.LaunchUriAsync(new Uri("https://sed.educacao.sp.gov.br/obtenha-seu-acesso"));
+        }
+
+        private async void Termos_Click(object sender, RoutedEventArgs e)
+        {
+            MessageDialog md = new MessageDialog("Em desenvolvimento");
+            await md.ShowAsync();
+        }
+
+        private async void Senha_Click(object sender, RoutedEventArgs e)
+        {
+            //https://sed.educacao.sp.gov.br/esqueci-a-senha 
+            await Launcher.LaunchUriAsync(new Uri("https://sed.educacao.sp.gov.br/esqueci-a-senha"));
+        }
+
+        private void checkBox_Checked(object sender, RoutedEventArgs e)
+        {
+            teste = !teste;
+        }
     }
 }

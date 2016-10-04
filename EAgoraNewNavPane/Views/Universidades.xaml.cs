@@ -21,48 +21,43 @@ namespace EAgoraNewNavPane.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Agenda : Page
+    public sealed partial class Universidades : Page
     {
-        public Agenda()
+        public Universidades()
         {
             this.InitializeComponent();
         }
 
-        private void evento_Click(object sender, RoutedEventArgs e)
+        private void Usp_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(AgendaDetail));
         }
 
-        private async void eventosSalvos_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            MessageDialog md = new MessageDialog("Em Desenvolvimento.");
-            await md.ShowAsync();
-        }
-
-        private void datas_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Universidades));
-        }
-
-        private async void papoHumanas_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void Mackenzie_Tapped(object sender, TappedRoutedEventArgs e)
         {
             MessageDialog md = new MessageDialog("Em Desenvolvimento.");
             await md.ShowAsync();
         }
 
-        private async void papoExatas_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void PUC_Tapped(object sender, TappedRoutedEventArgs e)
         {
             MessageDialog md = new MessageDialog("Em Desenvolvimento.");
             await md.ShowAsync();
         }
 
-        private async void papoBiológicas_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void ITA_Tapped(object sender, TappedRoutedEventArgs e)
         {
             MessageDialog md = new MessageDialog("Em Desenvolvimento.");
             await md.ShowAsync();
         }
 
-        private async void criarEvento_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void Unicamp_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            MessageDialog md = new MessageDialog("Em Desenvolvimento.");
+            await md.ShowAsync();
+        }
+
+        private async void Unesp_Tapped(object sender, TappedRoutedEventArgs e)
         {
             MessageDialog md = new MessageDialog("Em Desenvolvimento.");
             await md.ShowAsync();

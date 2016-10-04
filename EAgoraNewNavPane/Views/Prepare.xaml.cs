@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -32,19 +33,22 @@ namespace EAgoraNewNavPane.Views
             this.Frame.Navigate(typeof(SitesPrepareVestibulares));
         }
 
-        private void StackThree_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void StackThree_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            MessageDialog md = new MessageDialog("Em desenvolvimento");
+            await md.ShowAsync();
         }
 
-        private void StackTwo_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void StackTwo_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            MessageDialog md = new MessageDialog("Em desenvolvimento");
+            await md.ShowAsync();
         }
 
-        private void StackOne_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void StackOne_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            MessageDialog md = new MessageDialog("Em desenvolvimento");
+            await md.ShowAsync();
         }
     }
 }

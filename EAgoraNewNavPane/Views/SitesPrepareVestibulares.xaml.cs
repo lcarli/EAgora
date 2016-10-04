@@ -29,20 +29,20 @@ namespace EAgoraNewNavPane.Views
 
         private async void StackOne_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            //var uriString = "";
-            //await Windows.System.Launcher.LaunchUriAsync(new Uri(uriString));
+            var uriString = "http://www.educacao.sp.gov.br/educacao-jovens-adultos";
+            await Windows.System.Launcher.LaunchUriAsync(new Uri(uriString));
         }
 
         private async void StackTwo_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            //var uriString = "";
-            //await Windows.System.Launcher.LaunchUriAsync(new Uri(uriString));
+            var uriString = "https://pt.khanacademy.org/math/enem";
+            await Windows.System.Launcher.LaunchUriAsync(new Uri(uriString));
         }
 
         private async void StackThree_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            //var uriString = "";
-            //await Windows.System.Launcher.LaunchUriAsync(new Uri(uriString));
+            var uriString = "http://www.educacao.sp.gov.br/evesp/cursos/";
+            await Windows.System.Launcher.LaunchUriAsync(new Uri(uriString));
         }
     }
 }

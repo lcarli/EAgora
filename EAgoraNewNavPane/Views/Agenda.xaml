@@ -7,7 +7,91 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Agenda" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Images/Madeira.jpg"/>
+        </Grid.Background>
+        <RelativePanel Margin="20">
+            <RelativePanel.Background>
+                <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Images/Quadro Negro.jpg"/>
+            </RelativePanel.Background>
+
+            <Grid Name="eventosSalvos" 
+                        RelativePanel.AlignLeftWithPanel="True"
+                        RelativePanel.AlignRightWithPanel="True"
+                        Height="60"
+                        Margin="20,200,20,20" Tapped="eventosSalvos_Tapped">
+                <Grid.Background>
+                    <ImageBrush ImageSource="ms-appx:///Assets/Images/Fig 12 - Agenda_Barra.png"/>
+                </Grid.Background>
+                <TextBlock HorizontalAlignment="Right" Foreground="White" Text="Eventos salvos" VerticalAlignment="Center" FontSize="35" Margin="10"/>
+            </Grid>
+
+            <Grid Name="datas" 
+                        RelativePanel.AlignLeftWithPanel="True"
+                        RelativePanel.AlignRightWithPanel="True"
+                        RelativePanel.Below="eventosSalvos"
+                        Tapped="datas_Tapped"
+                        Height="60"
+                        Margin="20,0">
+                <Grid.Background>
+                    <ImageBrush ImageSource="ms-appx:///Assets/Images/Fig 12 - Agenda_Barra.png"/>
+                </Grid.Background>
+                <TextBlock HorizontalAlignment="Right" Foreground="White" Text="Datas de vestibulares" VerticalAlignment="Center" FontSize="35" Margin="10"/>
+            </Grid>
+
+            <Grid Name="papohumanas" 
+                        RelativePanel.AlignLeftWithPanel="True"
+                        RelativePanel.AlignRightWithPanel="True"
+                        RelativePanel.Below="datas"
+                        Tapped="papoHumanas_Tapped"
+                        Height="60"
+                        Margin="20,20">
+                <Grid.Background>
+                    <ImageBrush ImageSource="ms-appx:///Assets/Images/Fig 12 - Agenda_Barra.png"/>
+                </Grid.Background>
+                <TextBlock HorizontalAlignment="Right" Foreground="White" Text="Bate-Papo de Humanas" VerticalAlignment="Center" FontSize="35" Margin="10"/>
+            </Grid>
+
+            <Grid Name="papoexatas" 
+                        RelativePanel.AlignLeftWithPanel="True"
+                        RelativePanel.AlignRightWithPanel="True"
+                        RelativePanel.Below="papohumanas"
+                        Tapped="papoExatas_Tapped"
+                        Height="60"
+                        Margin="20,0">
+                <Grid.Background>
+                    <ImageBrush ImageSource="ms-appx:///Assets/Images/Fig 12 - Agenda_Barra.png"/>
+                </Grid.Background>
+                <TextBlock HorizontalAlignment="Right" Foreground="White" Text="Bate-Papo de Exatas" VerticalAlignment="Center" FontSize="35" Margin="10"/>
+            </Grid>
+
+            <Grid Name="papobiologicas" 
+                        RelativePanel.AlignLeftWithPanel="True"
+                        RelativePanel.AlignRightWithPanel="True"
+                        RelativePanel.Below="papoexatas"
+                        Tapped="papoBiológicas_Tapped"
+                        Height="60"
+                        Margin="20">
+                <Grid.Background>
+                    <ImageBrush ImageSource="ms-appx:///Assets/Images/Fig 12 - Agenda_Barra.png"/>
+                </Grid.Background>
+                <TextBlock HorizontalAlignment="Right" Foreground="White" Text="Bate-Papo de Biológicas" VerticalAlignment="Center" FontSize="35" Margin="10"/>
+            </Grid>
+
+            <StackPanel Name="evento" 
+                        Orientation="Horizontal"
+                        RelativePanel.AlignBottomWithPanel="True"
+                        RelativePanel.AlignLeftWithPanel="True"
+                        RelativePanel.AlignRightWithPanel="True"
+                        Height="60"
+                        Tapped="criarEvento_Tapped"
+                        Background="Green"
+                        Margin="20">
+                <Image Source="ms-appx:///Assets/Images/Fig 12 - Seta_White.png" Margin="15,5"/>
+                <TextBlock/>
+                <TextBlock HorizontalAlignment="Right" Foreground="White" Text="Crie seu evento :)" VerticalAlignment="Center" FontSize="40"/>
+            </StackPanel>
+        </RelativePanel>
     </Grid>
 </Page>

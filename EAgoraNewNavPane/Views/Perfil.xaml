@@ -15,11 +15,25 @@
             <RelativePanel.Background>
                 <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Images/Quadro Negro.jpg"/>
             </RelativePanel.Background>
-            <TextBlock RelativePanel.AlignVerticalCenterWithPanel="True"
-                       RelativePanel.AlignHorizontalCenterWithPanel="true"
-                       Text="PERFIL"
-                       Foreground="White"
-                       FontSize="50"/>
+            <StackPanel Name="stk"
+                        Orientation="Horizontal"
+                        RelativePanel.AlignLeftWithPanel="True"
+                        RelativePanel.AlignRightWithPanel="True"
+                        RelativePanel.AlignTopWithPanel="True"
+                        Margin="20">
+                <Image Width="170" Height="170" Source="ms-appx:///Assets/Images/Avatar.png" />
+                <TextBlock/>
+                <TextBlock Text="Carolina Silva" Foreground="White" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,0"/>
+            </StackPanel>
+            <StackPanel Name="stkMenu"
+                        Orientation="Vertical"
+                        RelativePanel.Below="stk"
+                        RelativePanel.AlignLeftWithPanel="True"
+                        RelativePanel.AlignRightWithPanel="True"
+                        RelativePanel.AlignBottomWithPanel="True"
+                        Margin="10,200,10,0">
+                <Image Source="ms-appx:///Assets/Images/Fig 18 - Campos Perfil.png"/>
+            </StackPanel>
         </RelativePanel>
     </Grid>
 </Page>

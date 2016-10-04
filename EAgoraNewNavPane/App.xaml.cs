@@ -37,6 +37,8 @@ namespace EAgoraNewNavPane
         public static  ObservableCollection<IconDataItem> MenuList { get; set; } = new ObservableCollection<IconDataItem>();
         public static ObservableCollection<OptionMenuItem> OptionList { get; set; } = new ObservableCollection<OptionMenuItem>();
 
+        public static List<string> SkypeNames;
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -49,9 +51,39 @@ namespace EAgoraNewNavPane
             MenuList.Add(new IconDataItem { Title = "Match", IconImage = "ms-appx:///Assets/Icons/Heart.png", DestinationPage = typeof(Match) });
             MenuList.Add(new IconDataItem { Title = "Rede de Relacionamento", IconImage = "ms-appx:///Assets/Icons/People Talking.png", DestinationPage = typeof(Rede) });
             MenuList.Add(new IconDataItem { Title = "Prepare-se", IconImage = "ms-appx:///Assets/Icons/Chapeu.png", DestinationPage = typeof(Prepare) });
-            MenuList.Add(new IconDataItem { Title = "Agenda", IconImage = "ms-appx:///Assets/Icons/Heart.png", DestinationPage = typeof(Agenda) });
+            MenuList.Add(new IconDataItem { Title = "Agenda", IconImage = "ms-appx:///Assets/Images/Fig 11 - Ícone Agenda.png", DestinationPage = typeof(Agenda) });
 
             OptionList.Add(new OptionMenuItem { Glyph = "", Name = "Ajuda", DestinationPage = (typeof(Ajuda)) });
+
+            SkypeNames = new List<string>()
+            {
+               "Paulinho.Freire",
+               "Ma_Cortella",
+               "Ceci.Meireles",
+               "Grossi.Esther",
+               "Haddads2SP",
+               "Rocha_Ota",
+               "Anísio_Teixeira",
+               "Chalita.Gabriel",
+               "Gomes.Djalma",
+               "Veloso.Elisa",
+               "MaMuller2000",
+               "Buarque03Cristovam",
+               "Novelino_Cori",
+               "Albino.Oliveira",
+               "Euripedes123",
+               "Gomes_Alf",
+               "Fran.Pimentel",
+               "Yves_Taille",
+               "Dulce_Almeida",
+               "Assupçao_Esther",
+               "Dario.Pedro",
+               "Antunes_Celso",
+               "Demetrio22Ribeiro",
+               "Zé_Teixeira",
+               "Ju.Wanderley"
+            };
+
         }
 
         /// <summary>
@@ -155,7 +187,7 @@ namespace EAgoraNewNavPane
         //    }
         //}
 
-        public static void SaveData(string nome, Object value)
+        public static void SaveData(string nome, string value)
         {
             ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
             StorageFolder localFolder = ApplicationData.Current.LocalFolder;
@@ -172,6 +204,32 @@ namespace EAgoraNewNavPane
         public static async void DefaultLaunch(string nome)
         {
             nome = "Lista de Livros - USP .docx";
+            // Path to the file in the app package to launch
+            string fileToOpen = @"Assets\" + nome;
+
+            var file = await Package.Current.InstalledLocation.GetFileAsync(fileToOpen);
+
+            if (file != null)
+            {
+                // Launch the retrieved file
+                var success = await Windows.System.Launcher.LaunchFileAsync(file);
+
+                if (!success)
+                {
+                    MessageDialog md = new MessageDialog("Falha ao carregar o arquivo.");
+                    await md.ShowAsync();
+                }
+            }
+            else
+            {
+                MessageDialog md = new MessageDialog("Falha ao encontrar o arquivo.");
+                await md.ShowAsync();
+            }
+        }
+
+        public static async void DefaultLaunch2(string nome)
+        {
+            nome = "Prova FUVEST 2016.docx";
             // Path to the file in the app package to launch
             string fileToOpen = @"Assets\" + nome;
 

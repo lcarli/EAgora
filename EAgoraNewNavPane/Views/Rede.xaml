@@ -35,18 +35,19 @@
                         Orientation="Vertical">
                 <Button HorizontalAlignment="Center"
                         Width="250"
-                        Height="70"
+                        Height="84"
                         Click="Proximidade">
                     <Button.Background>
-                        <ImageBrush ImageSource="ms-appx:///Assets/Icons/proximidade.PNG"/>
+                        <ImageBrush ImageSource="ms-appx:///Assets/Images/Fig 1 - Proximidade.png"/>
                     </Button.Background>
                 </Button>
+                <TextBlock/>
                 <Button HorizontalAlignment="Center" 
                         Width="250"
-                        Height="70"
+                        Height="84"
                         Click="AreaDeInteresse">
                     <Button.Background>
-                        <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Icons/area.PNG"/>
+                        <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Images/Fig 2 - Área de Interesse.png"/>
                     </Button.Background>
                 </Button>
                 <TextBlock Name="text4"
